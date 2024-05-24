@@ -44,13 +44,13 @@ class MyTestCase(unittest.TestCase):
 
 
     def test_play(self):
-        #test 2 flushes
+        # test 2 equal flushes
         result = PS.play_cards('SQ', 'SK', 'SA', 'SQ', 'SK', 'SA')
         self.assertEqual(result, 0)
-        # test left flush
+        # test 2 flushes, left flush higher
         result = PS.play_cards('SQ', 'SK', 'SA', 'S9', 'S10', 'SJ')
         self.assertEqual(result, -1)
-        # test right flush
+        # test 2 flushes, right flush higher
         result = PS.play_cards('S9', 'S10', 'SJ', 'SQ', 'SK', 'SA')
         self.assertEqual(result, 1)
         # test 2 straights, equal
@@ -71,10 +71,10 @@ class MyTestCase(unittest.TestCase):
         # test 2 equal triplets
         result = PS.play_cards('S9', 'S9', 'S9', 'S9', 'S9', 'S9')
         self.assertEqual(result, 0)
-        # test left triplet higher
+        # test 2 triplets, left triplet higher
         result = PS.play_cards('S9', 'S9', 'S9', 'S3', 'S3', 'S3')
         self.assertEqual(result, -1)
-        # test right triplet higher
+        # test 2 triplets, right triplet higher
         result = PS.play_cards('S3', 'S3', 'S3', 'S9', 'S9', 'S9')
         self.assertEqual(result, 1)
         # test left triplet, right garbage

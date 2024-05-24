@@ -60,7 +60,7 @@ def play_cards(left1:str, left2:str, left3:str, right1:str, right2:str, right3:s
         # right got a straight and left didn't
         return 1
 
-    # handle triples (3 of a kind)
+    # handle triples (3 of a kind - beats nothing but garbage)
     if triple_check['left'] > triple_check['right']:
         return -1
     elif triple_check['right'] > triple_check['left']:
@@ -71,7 +71,7 @@ def play_cards(left1:str, left2:str, left3:str, right1:str, right2:str, right3:s
 
 
 # function calls
-# print(check_straight('S8', 'S9', 'S10'))
-# print(check_3ofa_kind('SJ', 'SJ', 'SJ'))
-# print(check_royal_flush('SK', 'SQ', 'SA'))
-# print(play_cards('S6', 'S6', 'S6', 'S2', 'S3', 'S4'))
+print(check_straight('S8', 'S9', 'S10'))
+print(check_3ofa_kind('SJ', 'SJ', 'SJ'))
+print(check_royal_flush('SK', 'SQ', 'SA'))
+print(play_cards('S6', 'S6', 'S6', 'S2', 'S3', 'S4'))
